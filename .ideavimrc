@@ -1,0 +1,226 @@
+"" Changes last set 2024-05-28
+"" Tested on PyCharm 2023.1 (CE) Build#PC-231.8108.197
+"" Plugins: IdeaVim 2.7.5 - Which-Key 0.9.0
+"" Base Settings
+"" ====================================================================
+set scrolloff=8
+set incsearch
+set ignorecase
+set smartcase
+set clipboard=unnamed
+set clipboard^=ideaput
+set number relativenumber
+let mapleader = " "
+set notimeout
+set timeoutlen=5000
+"set visualbell
+
+"" Plugin Settings
+"" ====================================================================
+set ideajoin
+
+set NERDTree
+let g:NERDTreeMapActivateNode='l'
+let g:NERDTreeMapJumpParent='h'
+
+" 'ysiw}' to surround word in curlys
+" 'cs[)' to change surrounding brackets to parenthesis
+set surround
+
+set highlightedyank
+set vim-paragraph-motion
+
+
+set which-key
+"let g:WhichKey_SortOrder = "by_key_prefix_first"
+"let g:WhichKey_SortOrder = "by_key"
+let g:WhichKey_SortOrder = "by_description"
+let g:WhichKeyDesc_leader = "<leader> Leader key"
+"let g:WhichKey_ProcessUnknownMappings = "false"
+
+"" Key Mappings
+"" ====================================================================
+
+"" Exit Insert mode by pressing 'jk'
+inoremap jk <Esc>
+
+"" Center screen after scrolling up and down
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+
+nnoremap gk :call FloatUp()<CR>
+nnoremap gj :call FloatDown()<CR>
+" Center the cursor vertically when moving to the next search
+map <Leader>n nzz
+map <Leader>N Nzz
+
+"" Use after visually selecting something to avoid losing what's in the default register
+map <Leader>p "_dP
+
+"" Quit Pycharm
+map <Leader>q! <Action>(Exit)
+
+"" Reload .ideavimrc
+map <Leader>vim <Action>(IdeaVim.ReloadVimRc.reload)
+
+"" Popup navigation
+"map <C-j> <Action>(EditorDown)
+"map <C-j> <Action>(List-selectNextRow)
+"map <C-j> <Action>(NavBar-selectDown)
+"map <C-j> <Action>(PopupMenu-selectNext)
+"map <C-j> <Action>(Table-selectNextRow)
+"map <C-j> <Action>(Tree-selectNext)
+
+"" Jump between methods
+map [[ <Action>(MethodUp)
+map ]] <Action>(MethodDown)
+
+"" Hide these from the WhichKey menu
+let g:WhichKeyDesc_paste = "<leader>p"
+let g:WhichKeyDesc_search_fwd = "<leader>n"
+let g:WhichKeyDesc_search_back = "<leader>N"
+let g:WhichKeyDesc_quit = "<leader>q"
+let g:WhichKeyDesc_surround_c = "cs"
+let g:WhichKeyDesc_surround_y = "ys"
+let g:WhichKeyDesc_surround_d = "ds"
+let g:WhichKeyDesc_reload = "<leader>v"
+
+let g:WhichKeyDesc_MethodUp = "[[ Previous Def"
+let g:WhichKeyDesc_MethodDown = "]] Next Def"
+
+map <Leader>n <Action>(NewFile)
+let g:WhichKeyDesc_newfile = "<leader>n New File"
+
+map <Leader>; <Action>(Run)<Action>(ActivateRunToolWindow)
+let g:WhichKeyDesc_run = "<leader>; Run"
+
+" Open NERDTree (use q to exit)
+map <Leader>x :NERDTreeToggle<CR>
+let g:WhichKeyDesc_NERDTree = "<leader>x Toggle Explorer"
+
+map <Leader>c <Action>(CommentByLineComment)
+let g:WhichKeyDesc_comment = "<leader>c Comment Line"
+
+" Map common PyCharm IDE commands (use :actionlist to view all)
+let g:WhichKeyDesc_show = "<leader>s Show menu"
+map <Leader>si <Action>(ShowIntentionActions)
+let g:WhichKeyDesc_show_intention = "<leader>si Show Intention Actions"
+map <Leader>su <Action>(ShowUsages)
+let g:WhichKeyDesc_show_usages = "<leader>su Show Usages"
+map <Leader>sh <Action>(LocalHistory.ShowHistory)
+let g:WhichKeyDesc_show_history = "<leader>sh Show History"
+map <Leader>sd <Action>(ActivateTODOToolWindow)
+let g:WhichKeyDesc_show_todo = "<leader>sd Show TODO"
+map <Leader>st <Action>(ActivateTerminalToolWindow)
+let g:WhichKeyDesc_show_terminal = "<leader>st Show Terminal"
+map <Leader>ss <Action>(ActivateStructureToolWindow)
+let g:WhichKeyDesc_show_structure = "<leader>ss Show Structure"
+
+let g:WhichKeyDesc_hide = "<leader>h Hide Menu"
+map <Leader>hw <Action>(HideActiveWindow)
+let g:WhichKeyDesc_hide_active_win = "<leader>hw Hide Window"
+map <Leader>ha <Action>(HideAllWindows)
+let g:WhichKeyDesc_hide_active_all_win = "<leader>ha Hide All Windows"
+
+let g:WhichKeyDesc_refactor = "<leader>r Refactor"
+map <Leader>rr <Action>(RenameElement)
+let g:WhichKeyDesc_refactor_rename = "<leader>rr Rename"
+
+" Running and debugging PyCharm shortcuts
+map <Leader>b <Action>(ToggleLineBreakpoint)
+let g:WhichKeyDesc_toggle_breakpoint = "<leader>b Breakpoint"
+map <Leader>m <Action>(StepIntoMyCode)
+let g:WhichKeyDesc_step_into_mycode = "<leader>m Debug: Step Into My Code"
+map <Leader>j <Action>(MoveStatementDown)
+let g:WhichKeyDesc_move_statement_down = "<leader>j Move Statement Down"
+map <Leader>k <Action>(MoveStatementUp)
+let g:WhichKeyDesc_move_statement_up = "<leader>k Move Statement Up"
+map <Leader>l <Action>(JumpToLastWindow)
+let g:WhichKeyDesc_last_windows = "<leader>l Last Tool Window"
+let g:WhichKeyDesc_debugging = "<leader>d Debug"
+map <Leader>dc <Action>(ActivatePythonConsoleToolWindow)
+let g:WhichKeyDesc_debugging_console = "<leader>dc Console"
+map <Leader>dd <Action>(Debug)
+let g:WhichKeyDesc_debugging_debug = "<leader>dd Debug code"
+map <Leader>dx <Action>(Stop)
+let g:WhichKeyDesc_debugging_stop = "<leader>dx Stop running code"
+map <Leader>de <Action>(ShowErrorDescription)
+let g:WhichKeyDesc_debugging_error = "<leader>de Error Description"
+map <Leader>dl <Action>(GotoNextError)
+let g:WhichKeyDesc_debugging_goto_error = "<leader>dl Next Error"
+map <Leader>dh <Action>(GotoPreviousError)
+let g:WhichKeyDesc_debugging_goto_prev_error = "<leader>dh Previous Error"
+map <Leader>do <Action>(StepOver)
+let g:WhichKeyDesc_debugging_step_over = "<leader>do Step Over"
+map <Leader>di <Action>(StepInto)
+let g:WhichKeyDesc_debugging_step_into = "<leader>di Step Into"
+map <Leader>ds <Action>(SmartStepInto)
+let g:WhichKeyDesc_debugging_step_smart = "<leader>ds Smart Step Into"
+map <Leader>dO <Action>(StepOut)
+let g:WhichKeyDesc_debugging_step_out = "<leader>dO Step Out"
+
+let g:WhichKeyDesc_fold = "<leader>f Fold"
+map <Leader>ff <Action>(CollapseRegion)
+let g:WhichKeyDesc_fold_region = "<leader>ff Fold Region"
+map <Leader>fr <Action>(CollapseRegionRecursively)
+let g:WhichKeyDesc_fold_recursively = "<leader>fr Fold Recursively"
+map <Leader>fa <Action>(CollapseAllRegions)
+let g:WhichKeyDesc_fold_all = "<leader>fa Fold All"
+
+let g:WhichKeyDesc_expand = "<leader>e Expand"
+map <Leader>ee <Action>(ExpandRegion)
+let g:WhichKeyDesc_expand_region = "<leader>ee Expand Region"
+map <Leader>er <Action>(ExpandRegionRecursively)
+let g:WhichKeyDesc_expand_recursively = "<leader>er Expand Recursively"
+map <Leader>ea <Action>(ExpandAllRegions)
+let g:WhichKeyDesc_fold_expand_all = "<leader>ea Expand All Regions"
+
+let g:WhichKeyDesc_window = "<leader>w Window splits"
+map <leader>wl <Action>(MoveTabRight)
+let g:WhichKeyDesc_window_split_right = "<leader>wl Split vertically and move tab right"
+map <leader>wv <Action>(SplitVertically)
+let g:WhichKeyDesc_window_split_vertically = "<leader>wv Split vertically"
+map <leader>wh <Action>(SplitHorizontally)
+let g:WhichKeyDesc_window_split_horizontally = "<leader>wh Split horizontally"
+map <leader>wu <Action>(Unsplit)
+let g:WhichKeyDesc_window_split_unsplit = "<leader>wu Unsplit"
+map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+let g:WhichKeyDesc_window_split_move_editor = "<leader>wm Move editor to opposite Window"
+map <leader>wn <Action>(NextSplitter)
+let g:WhichKeyDesc_window_split_next = "<leader>wn Next Window"
+
+let g:WhichKeyDesc_tabs = "<leader>t Tabs"
+map <leader>th <Action>(PreviousTab)
+let g:WhichKeyDesc_tabs_previous_tab = "<leader>th Previous Tab"
+map <leader>tl <Action>(NextTab)
+let g:WhichKeyDesc_tabs_next_tab = "<leader>tl Next Tab"
+map <leader>t1 <Action>(GoToTab1)
+let g:WhichKeyDesc_tabs_1 = "<leader>t1 Go to tab 1"
+map <leader>t2 <Action>(GoToTab2)
+let g:WhichKeyDesc_tabs_2 = "<leader>t2 Go to tab 2"
+map <leader>t3 <Action>(GoToTab3)
+let g:WhichKeyDesc_tabs_3 = "<leader>t3 Go to tab 3"
+map <leader>t4 <Action>(GoToTab4)
+let g:WhichKeyDesc_tabs_4 = "<leader>t4 Go to tab 4"
+map <leader>t5 <Action>(GoToTab5)
+let g:WhichKeyDesc_tabs_5 = "<leader>t5 Go to tab 5"
+map <leader>t6 <Action>(GoToTab6)
+let g:WhichKeyDesc_tabs_6 = "<leader>t6 Go to tab 6"
+map <leader>t7 <Action>(GoToTab7)
+let g:WhichKeyDesc_tabs_7 = "<leader>t7 Go to tab 7"
+map <leader>t8 <Action>(GoToTab8)
+let g:WhichKeyDesc_tabs_8 = "<leader>t8 Go to tab 8"
+map <leader>t9 <Action>(GoToTab9)
+let g:WhichKeyDesc_tabs_9 = "<leader>t9 Go to tab 9"
+
+let g:WhichKeyDesc_appearance = "<leader>a Appearance"
+map <Leader>af <Action>(ToggleFullScreen)
+let g:WhichKeyDesc_fullscreen = "<leader>af Full Screen"
+map <Leader>ap <Action>(TogglePresentationMode)
+let g:WhichKeyDesc_presentation = "<leader>ap Presentation Mode"
+map <Leader>ad <Action>(ToggleDistractionFreeMode)
+let g:WhichKeyDesc_distraction = "<leader>ad Distraction Free Mode"
+map <Leader>az <Action>(ToggleZenMode)
+let g:WhichKeyDesc_zen = "<leader>az Zen Mode"
+map <Leader>ac <Action>(ToggleCompactMode)
+let g:WhichKeyDesc_compact = "<leader>ac Compact Mode"
