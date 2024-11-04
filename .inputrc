@@ -1,0 +1,9 @@
+## Changes last set 2024-11-04
+# Ctrl-Backspace: delete previous word
+"\C-H": shell-backward-kill-word
+
+#enable vi keybindings where available (like bash)
+set editing-mode vi
+
+#set keymap vi-insert
+"jk": "\e"
