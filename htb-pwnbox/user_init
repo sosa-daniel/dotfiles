@@ -1,0 +1,8 @@
+#!/bin/bash
+#This script is executed every time your instance is spawned.
+
+# copy files to home folder
+cp -af ~/my_data/home/. ~/
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+~/.tmux/plugins/tpm/bin/install_plugins
