@@ -32,3 +32,6 @@ nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 " Press space twice to switch between your last two buffers
 nnoremap <leader><leader> <C-^>
+" add numbered jumps to the jumplist
+nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'k'
+nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
