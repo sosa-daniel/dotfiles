@@ -1,6 +1,9 @@
-"" Changes last set 2024-11-04
+"" Changes last set 2024-11-05
 "" Base Settings
 "" ====================================================================
+colorscheme slate
+"colorscheme desert
+"colorscheme elflord
 " Disable the mouse
 set mouse=
 " User relative numbers in normal mode only for an active buffer; user absolute numbers elsewhere
