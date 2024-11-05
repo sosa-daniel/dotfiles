@@ -1,6 +1,8 @@
 "" Changes last set 2024-11-04
 "" Base Settings
 "" ====================================================================
+" Disable the mouse
+set mouse=
 " User relative numbers in normal mode only for an active buffer; user absolute numbers elsewhere
 set number
 augroup numbertoggle
