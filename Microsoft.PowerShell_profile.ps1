@@ -16,7 +16,7 @@ Set-PSReadLineKeyHandler -Chord Tab -Function Complete
 Set-PSReadLineKeyHandler -Chord Ctrl-r -Function ReverseSearchHistory -ViMode Insert
 Set-PSReadLineKeyHandler -Chord Ctrl-r -Function ReverseSearchHistory -ViMode Command
 
-# Delete back one word with <C-W> This config is necessary after mapping <C-BS> to <C-W> in the
+# Delete back one word with <C-W>. This config is necessary after mapping <C-BS> to <C-W> in the
 # Windows Terminal settings.json file as follows:
 # {
 #   "keys": "ctrl+backspace",
