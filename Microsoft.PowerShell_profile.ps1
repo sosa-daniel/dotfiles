@@ -4,9 +4,18 @@
 # Aliases
 Set-Alias -Name vi -Value $HOME\nvim-win64\bin\nvim.exe
 function view { vi -R $args }
-Set-Alias -Name vim -Value $HOME\nvim-win64\bin\nvim.exe
+Set-Alias -Name vim -Value vi
 Set-Alias -Name grep -Value findstr
-
+filter head {
+    param($Count=10)
+    if ($script:headcount -lt $Count) {
+        $script:headcount++
+        $_
+    } else {
+        rm variable:headcount
+        break
+    }
+}
 # Use powershell vi mode
 Set-PSReadLineOption -EditMode Vi
 
