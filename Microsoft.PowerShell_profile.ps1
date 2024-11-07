@@ -3,6 +3,7 @@
 
 # Aliases
 Set-Alias -Name vi -Value $HOME\nvim-win64\bin\nvim.exe
+function view { vi -R $args }
 Set-Alias -Name vim -Value $HOME\nvim-win64\bin\nvim.exe
 Set-Alias -Name grep -Value findstr
 
