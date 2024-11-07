@@ -1,11 +1,10 @@
-"" Changes last set 2024-11-05
+"" Changes last set 2024-11-07
 "" Base Settings
 "" ====================================================================
 colorscheme slate
 "colorscheme desert
 "colorscheme elflord
-" Disable the mouse
-set mouse=
+
 " User relative numbers in normal mode only for an active buffer; user absolute numbers elsewhere
 set number
 augroup numbertoggle
@@ -33,8 +32,11 @@ inoremap jk <Esc>
 " Center screen after scrolling up and down
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
-" Press space twice to switch between your last two buffers
-nnoremap <leader><leader> <C-^>
 " add numbered jumps to the jumplist
 nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
+" Buffer navigation
+nnoremap <leader>n :bnext<CR>
+nnoremap <leader>p :bprev<CR>
+" Press space twice to switch between your last two buffers
+nnoremap <leader><leader> <C-^>
