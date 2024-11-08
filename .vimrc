@@ -4,7 +4,7 @@
 colorscheme slate
 "colorscheme desert
 "colorscheme elflord
-
+set hidden
 " User relative numbers in normal mode only for an active buffer; user absolute numbers elsewhere
 set number
 augroup numbertoggle
@@ -36,7 +36,4 @@ nnoremap <C-d> <C-d>zz
 nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
 " Buffer navigation
-nnoremap <leader>n :bnext<CR>
-nnoremap <leader>p :bprev<CR>
-" Press space twice to switch between your last two buffers
-nnoremap <leader><leader> <C-^>
+nnoremap <leader>l :ls<CR>:b<space>
