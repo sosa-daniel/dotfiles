@@ -2,6 +2,9 @@
 ## Edit with `vi $profile`
 
 # Aliases
+Remove-Item Alias:ls
+function ls { Get-ChildItem -Name}
+function lsh { Get-ChildItem }
 Set-Alias -Name vi -Value $HOME\nvim-win64\bin\nvim.exe
 function view { vi -R $args }
 Set-Alias -Name vim -Value vi
@@ -37,6 +40,9 @@ Set-PSReadLineKeyHandler -Chord Ctrl-r -Function ReverseSearchHistory -ViMode Co
 #   }
 # }
 Set-PSReadLineKeyHandler -Chord Ctrl-w -Function BackwardDeleteWord
+
+# Replace the input with the previous item in the history (same as UpArrow)
+Set-PSReadLineKeyHandler -Chord Ctrl-p -Function PreviousHistory
 
 # Map 'jk' to <Esc>
 $j_timer = New-Object System.Diagnostics.Stopwatch
