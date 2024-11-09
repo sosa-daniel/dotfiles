@@ -5,7 +5,7 @@
 Remove-Item Alias:ls
 function ls { Get-ChildItem -Name}
 function lsh { Get-ChildItem }
-Set-Alias -Name vi -Value $HOME\nvim-win64\bin\nvim.exe
+Set-Alias -Name vi -Value nvim
 function view { vi -R $args }
 Set-Alias -Name vim -Value vi
 Set-Alias -Name grep -Value findstr
@@ -19,6 +19,8 @@ filter head {
         break
     }
 }
+# Disable the audible Bell
+Set-PSReadLineOption -BellStyle None
 # Use powershell vi mode
 Set-PSReadLineOption -EditMode Vi
 
