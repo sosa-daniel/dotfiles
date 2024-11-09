@@ -1,7 +1,7 @@
 "" Changes last set 2024-11-08
 "" Base Settings
 "" ====================================================================
-set colorscheme slate
+colorscheme slate
 " 'hidden' allows moving through buffers without saving first
 set hidden
 " User relative numbers in normal mode only for an active buffer; user absolute numbers elsewhere
