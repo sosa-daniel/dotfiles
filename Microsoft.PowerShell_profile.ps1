@@ -132,7 +132,6 @@ function grep {
 Set-Alias -Name vi -Value nvim
 function view { vi -R $args }
 Set-Alias -Name vim -Value vi
-Set-Alias -Name grep -Value findstr
 
 ##############################################################################
 # SHELL SETTINGS
@@ -177,3 +176,4 @@ Set-PSReadLineKeyHandler -Key k -ViMode Insert -ScriptBlock {
         [Microsoft.PowerShell.PSConsoleReadLine]::SetCursorPosition($cursor-1)
     }
 }
+
