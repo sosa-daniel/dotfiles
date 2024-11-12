@@ -5,7 +5,6 @@
 # ALIASES AND FUNCTIONS
 ##############################################################################
 # Coreutils from uutils.github.io
-function head { coreutils head $args}
 Remove-Item Alias:ls
 function ls { coreutils ls $args}
 Remove-Item Alias:cat
@@ -17,6 +16,16 @@ function cat {
     }
     else {
         coreutils cat $args
+    }
+}
+function head { 
+    $count = @($input).Count
+    $input.Reset()
+    if ($count) {
+        $input | coreutils head $args
+    }
+    else {
+        coreutils head $args
     }
 }
 function more { 
@@ -168,6 +177,3 @@ Set-PSReadLineKeyHandler -Key k -ViMode Insert -ScriptBlock {
         [Microsoft.PowerShell.PSConsoleReadLine]::SetCursorPosition($cursor-1)
     }
 }
-
-# Load Node.js environment variables
-fnm env --use-on-cd | Out-String | Invoke-Expression
