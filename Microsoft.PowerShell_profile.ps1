@@ -1,4 +1,4 @@
-## Changes last set 2024-11-07
+## Changes last set 2024-11-12
 ## Edit with `vi $profile`
 
 ##############################################################################
@@ -176,4 +176,3 @@ Set-PSReadLineKeyHandler -Key k -ViMode Insert -ScriptBlock {
         [Microsoft.PowerShell.PSConsoleReadLine]::SetCursorPosition($cursor-1)
     }
 }
-
