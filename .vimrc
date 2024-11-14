@@ -1,4 +1,4 @@
-"" Changes last set 2024-11-13
+""" Changes last set 2024-11-13
 "" Plugins & Colorscheme - install with Vim-Plug: https://github.com/junegunn/vim-plug
 "" ====================================================================
 call plug#begin()
@@ -62,6 +62,6 @@ nnoremap <silent> ]B :blast<CR>
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-nnoremap <c-P> <cmd>lua require('fzf-lua').files()<CR>
 " Execute command under cursor (line)
 "nnoremap <leader>c Y:@"<CR>
+nnoremap <C-P> :FZF<CR>
