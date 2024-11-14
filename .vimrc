@@ -1,21 +1,22 @@
-""" Changes last set 2024-11-13
+""" Changes last set 2024-11-14
 "" Plugins & Colorscheme - install with Vim-Plug: https://github.com/junegunn/vim-plug
 "" ====================================================================
 call plug#begin()
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'echasnovski/mini.icons'
-Plug 'davidhalter/jedi-vim'
-Plug 'itchyny/lightline.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'catppuccin/vim', { 'as': 'catppuccin'}
+Plug 'davidhalter/jedi-vim'                                         " Python autocompletion library!
+Plug 'junegunn/vim-easy-align'                                      " extra operators and text-objects for aligning text
+Plug 'tpope/vim-surround'                                           " extra operators and text-objects for sorrounding characters
+Plug 'tpope/vim-repeat'                                             "	dependency of surround
+if has('nvim')                                                      " Fuzzy Finder depending of if Vim or NeoVim
+	Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' } " Fuzzy Finder
+	Plug 'nvim-lua/plenary.nvim'                                "	dependency of telescope
+else	
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " Fuzzy Finder
+	Plug 'junegunn/fzf.vim'                                     "	Fuzzy Finder integration
+endif
+Plug 'itchyny/lightline.vim'                                        " Statusline
+Plug 'catppuccin/vim', { 'as': 'catppuccin'}                        " Colorscheme
 call plug#end()
-let g:lightline = {
-	\ 'colorscheme': 'one',
-	\ }
+let g:lightline = { 'colorscheme': 'one'}
 colorscheme catppuccin_macchiato 
 
 "" Base Settings
@@ -44,7 +45,7 @@ command! -nargs=1 -complete=help H help <args> | silent only
 "" Key Mapping
 "" ====================================================================
 let mapleader = " "
-" Exit Insert and Visual modes by pressing 'jk'
+" Exit Insert mode by pressing 'jk'
 inoremap jk <Esc>
 " Center screen after scrolling up and down
 nnoremap <C-u> <C-u>zz
@@ -64,4 +65,15 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 " Execute command under cursor (line)
 "nnoremap <leader>c Y:@"<CR>
-nnoremap <C-P> :FZF<CR>
+" fuzzy finder mappings
+if has('nvim') " If in NeoVim, map to telescope.nvim
+	nnoremap <leader>ff <cmd>Telescope find_files<cr>
+	nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+	nnoremap <leader>fb <cmd>Telescope buffers<cr>
+	nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+else " If in Vim, map to fzf.vim
+	nnoremap <leader>ff <cmd>Files<cr>
+	nnoremap <leader>fg <cmd>Rg<cr>
+	nnoremap <leader>fb <cmd>Buffers<cr>
+	nnoremap <leader>fh <cmd>Helptags<cr>
+endif
