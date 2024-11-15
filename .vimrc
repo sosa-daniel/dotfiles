@@ -23,25 +23,20 @@ colorscheme catppuccin_macchiato
 "" Base Settings
 "" ====================================================================
 set encoding=utf8
-set hidden " 'hidden' allows moving through buffers without saving first
-set cursorline " Highlights the current line in the editor
-" User relative numbers in normal mode only for an active buffer; user absolute numbers elsewhere
-set number 
+set hidden      " Allows moving through buffers without saving first
+set cursorline  " Highlights the current line in the editor
+set scrolloff=2 " The number of context lines above and below the cursor (similar to zz command)
+set incsearch   " Incremental search highlights the pattern as a search command is typed
+set ignorecase  " Ignore case in search patterns
+set smartcase   " Except if you use upper case in your search pattern
+set number      " User relative numbers in normal mode only for an active buffer; user absolute numbers elsewhere
 augroup numbertoggle
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
     autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
-" Scroll offset determines the number of context lines you would like to see above and below the cursor (similar to zz command)
-set scrolloff=4
-" Interact with the OS clipboard
-set clipboard^=unnamed,unnamedplus
-"" Search settings
-set incsearch " Incremental search highlights the pattern as a search command is typed
-set ignorecase " Ignore case in search patterns
-set smartcase " Except if you use upper case in your search pattern
-" use `:H` instead of `:help` for fullscreen help window
-command! -nargs=1 -complete=help H help <args> | silent only
+set clipboard^=unnamed,unnamedplus                           " Interact with the OS clipboard
+command! -nargs=1 -complete=help H help <args> | silent only " use `:H` instead of `:help` for fullscreen help window
 
 "" Key Mapping
 "" ====================================================================
@@ -51,22 +46,21 @@ inoremap jk <Esc>
 " Center screen after scrolling up and down
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
-" add numbered jumps to the jumplist
-nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'k'
-nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
 " Buffer navigation
 nnoremap <leader>b :ls!<CR>:b<space>
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
+"add numbered jumps to the jumplist
+nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'k'
+nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 " Execute command under cursor (line)
 "nnoremap <leader>c Y:@"<CR>
-" fuzzy finder mappings
 if has('nvim') " If in NeoVim, map to telescope.nvim
 	nnoremap <leader>ff <cmd>Telescope find_files<cr>
 	nnoremap <leader>fg <cmd>Telescope live_grep<cr>
