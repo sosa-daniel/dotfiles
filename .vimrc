@@ -1,5 +1,5 @@
 """ Changes last set 2024-11-14
-"" Plugins & Colorscheme - install with Vim-Plug: https://github.com/junegunn/vim-plug
+"" Plugins & Colorscheme - Install with Vim-Plug
 "" ====================================================================
 call plug#begin()
 Plug 'davidhalter/jedi-vim'                                         " Python autocompletion library!
