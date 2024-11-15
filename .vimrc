@@ -3,16 +3,17 @@
 "" ====================================================================
 call plug#begin()
 Plug 'davidhalter/jedi-vim'                                         " Python autocompletion library!
-Plug 'junegunn/vim-easy-align'                                      " extra operators and text-objects for aligning text
-Plug 'tpope/vim-surround'                                           " extra operators and text-objects for sorrounding characters
+Plug 'sheerun/vim-polyglot'                                         " Syntax highlighting and auto-indentation
+Plug 'junegunn/vim-easy-align'                                      " Extra operators and text-objects for aligning text
+Plug 'tpope/vim-surround'                                           " Extra operators and text-objects for sorrounding characters
 Plug 'tpope/vim-repeat'                                             " dependency of surround
 if has('nvim')                                                      " Plugins depending if on Vim/NeoVim
 	Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' } " Fuzzy finder
-	Plug 'nvim-lua/plenary.nvim'                                " dependency of telescope
+	Plug 'nvim-lua/plenary.nvim'                                " Dependency of telescope
 else	
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " Fuzzy finder
 	Plug 'junegunn/fzf.vim'                                     " Fuzzy finder integration
-	Plug 'tpope/vim-commentary'                                 " extra operator to comment/uncomment
+	Plug 'tpope/vim-commentary'                                 " Extra operator to comment/uncomment
 endif
 Plug 'itchyny/lightline.vim'                                        " Statusline
 Plug 'catppuccin/vim', { 'as': 'catppuccin'}                        " Colorscheme
