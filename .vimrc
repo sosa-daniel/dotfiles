@@ -6,12 +6,12 @@ Plug 'davidhalter/jedi-vim'                                         " Python aut
 Plug 'junegunn/vim-easy-align'                                      " extra operators and text-objects for aligning text
 Plug 'tpope/vim-surround'                                           " extra operators and text-objects for sorrounding characters
 Plug 'tpope/vim-repeat'                                             " dependency of surround
-if has('nvim')                                                      " Fuzzy Finder depending of if Vim or NeoVim
-	Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' } " Fuzzy Finder
+if has('nvim')                                                      " Plugins depending if on Vim/NeoVim
+	Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' } " Fuzzy finder
 	Plug 'nvim-lua/plenary.nvim'                                " dependency of telescope
 else	
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " Fuzzy Finder
-	Plug 'junegunn/fzf.vim'                                     " Fuzzy Finder integration
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " Fuzzy finder
+	Plug 'junegunn/fzf.vim'                                     " Fuzzy finder integration
 	Plug 'tpope/vim-commentary'                                 " extra operator to comment/uncomment
 endif
 Plug 'itchyny/lightline.vim'                                        " Statusline
