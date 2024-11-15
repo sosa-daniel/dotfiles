@@ -72,8 +72,6 @@ nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-" Execute command under cursor (line)
-"nnoremap <leader>c Y:@"<CR>
 if has('nvim') " If in NeoVim, map to telescope.nvim
     nnoremap <leader>ff <cmd>Telescope find_files<cr>
     nnoremap <leader>fg <cmd>Telescope live_grep<cr>
