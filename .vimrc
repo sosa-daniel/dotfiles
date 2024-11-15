@@ -67,7 +67,7 @@ if has('nvim') " If in NeoVim, map to telescope.nvim
 	nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 	nnoremap <leader>fb <cmd>Telescope buffers<cr>
 	nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-else " If in Vim, map to fzf.vim
+else           " If in Vim, map to fzf.vim
 	nnoremap <leader>ff <cmd>Files<cr>
 	nnoremap <leader>fg <cmd>Rg<cr>
 	nnoremap <leader>fb <cmd>Buffers<cr>
