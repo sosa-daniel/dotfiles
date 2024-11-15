@@ -47,7 +47,7 @@ autocmd BufNewFile,BufRead *.py    " PEP 8 indentation (Python)
     \ set autoindent               " Indent automatically
     \ set colorcolumn=80           " Marks an 80-character column limit
     \ set fileformat=unix          " Avoids conversion issues with Github
-		\ match BadWhitespace /\s\+$/  " Mark extra whitespace as bad
+    \ match BadWhitespace /\s\+$/  " Mark extra whitespace as bad
 " Use `:H` instead of `:help` for fullscreen help window
 command! -nargs=1 -complete=help H help <args> | silent only 
 
