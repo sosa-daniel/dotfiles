@@ -6,7 +6,7 @@
 ##############################################################################
 # Coreutils from uutils.github.io
 Remove-Item Alias:ls
-function ls { coreutils ls $args}
+function ls { coreutils ls --color=auto $args}
 Remove-Item Alias:cat
 function cat { 
     $count = @($input).Count
