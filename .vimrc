@@ -10,6 +10,7 @@ Plug 'tpope/vim-repeat'             " dependency of surround
 if has('nvim')                      " Plugins depending if on Vim/NeoVim
     Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
     Plug 'nvim-lua/plenary.nvim'                              
+    Plug 'neovim/nvim-lspconfig'
 else	
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }      
     Plug 'junegunn/fzf.vim'                                 
@@ -23,17 +24,18 @@ colorscheme catppuccin_macchiato
 
 "" Base Settings
 "" ============================================================================
-set encoding=utf8    " Avoid encoding headaches
-set laststatus=2     " Enable statusline (lightline Plugin)
-set noshowmode       " Don't show mode (lightline Plugin)
-set hidden           " Allows moving through buffers without saving first
-set cursorline       " Highlights the current line in the editor
-set scrolloff=2      " The number of context lines above and below the cursor
-set incsearch        " Highlights the pattern as a search command is typed
-set ignorecase       " Ignore case in search patterns
-set smartcase        " Except if you use upper case in your search pattern
-set number           " Absolute line numbers
-augroup numbertoggle " Relative numbers in normal/visual modes only
+set guicursor=a:block " Set the cursor to block in all modes
+set encoding=utf8     " Avoid encoding headaches
+set laststatus=2      " Enable statusline (lightline Plugin)
+set noshowmode        " Don't show mode (lightline Plugin)
+set hidden            " Allows moving through buffers without saving first
+set cursorline        " Highlights the current line in the editor
+set scrolloff=2       " The number of context lines above and below the cursor
+set incsearch         " Highlights the pattern as a search command is typed
+set ignorecase        " Ignore case in search patterns
+set smartcase         " Except if you use upper case in your search pattern
+set number            " Absolute line numbers
+augroup numbertoggle  " Relative numbers in normal/visual modes only
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
     autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
