@@ -15,7 +15,7 @@ cd home
 wget https://raw.githubusercontent.com/sosa-daniel/dotfiles/master/.bashrc
 wget https://raw.githubusercontent.com/sosa-daniel/dotfiles/master/.inputrc
 wget https://raw.githubusercontent.com/sosa-daniel/dotfiles/master/.tmux.conf
-wget https://raw.githubusercontent.com/sosa-daniel/dotfiles/master/.vimrc
+wget https://raw.githubusercontent.com/sosa-daniel/dotfiles/master/htb-pwnbox/.vimrc
 
 # create RSA keypair for persistence over SSH
 mkdir -p .ssh
