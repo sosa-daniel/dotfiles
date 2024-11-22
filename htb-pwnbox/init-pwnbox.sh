@@ -29,8 +29,7 @@ mkdir -p .ssh
 ssh-keygen -t rsa -f .ssh/id_rsa
 
 # run user_init
-cd $WDIR
-./user_init
+~/my_data/user_init
 
 # return to the previous working directory
 cd $PREV_PWD
