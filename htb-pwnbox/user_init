@@ -4,5 +4,10 @@
 # copy files to home folder
 cp -af ~/my_data/home/. ~/
 
+# setup ssh keys
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+chmod 700 ~/.ssh/
+chmod 600 ~/.ssh/*
+
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ~/.tmux/plugins/tpm/bin/install_plugins
