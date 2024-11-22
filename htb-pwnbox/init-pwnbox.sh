@@ -2,6 +2,10 @@
 PREV_PWD=$(pwd)
 WDIR="$HOME/my_data"
 
+if [ ! -d "$WDIR" ]; then
+  mkdir $WDIR
+fi
+
 cd $WDIR
 
 # get preconfigured user_init file
@@ -9,7 +13,10 @@ wget https://raw.githubusercontent.com/sosa-daniel/dotfiles/master/htb-pwnbox/us
 chmod +x user_init
 
 # prepare home directory to preload in user_init
-mkdir -p home
+if [ ! -d "home" ]; then
+  mkdir -p home
+fi
+
 cd home
 
 wget https://raw.githubusercontent.com/sosa-daniel/dotfiles/master/.bashrc
@@ -21,6 +28,7 @@ wget https://raw.githubusercontent.com/sosa-daniel/dotfiles/master/htb-pwnbox/.v
 mkdir -p .ssh
 ssh-keygen -t rsa -f .ssh/id_rsa
 
+# run user_init
 ./user_init
 
 # return to the previous working directory
