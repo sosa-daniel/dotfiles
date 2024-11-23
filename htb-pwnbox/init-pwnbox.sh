@@ -25,8 +25,8 @@ wget https://raw.githubusercontent.com/sosa-daniel/dotfiles/master/.tmux.conf
 wget https://raw.githubusercontent.com/sosa-daniel/dotfiles/master/htb-pwnbox/.vimrc
 
 # create RSA keypair for persistence over SSH
-mkdir -p .ssh
-ssh-keygen -t rsa -f .ssh/id_rsa
+#mkdir -p .ssh
+#ssh-keygen -t rsa -f .ssh/id_rsa
 
 # run user_init
 ~/my_data/user_init
