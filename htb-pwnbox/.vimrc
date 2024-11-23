@@ -1,7 +1,8 @@
 "" This VIMRC file does not make use of any plugins
 "" Base Settings
 "" ============================================================================
-colorscheme slate
+set nocompatible      " Disable vi compatibility
+colorscheme slate     " Colorscheme
 set nolist            " Don't show whitespace chars.
 set guicursor=a:block " Set the cursor to block in all modes
 set encoding=utf8     " Avoid encoding headaches
