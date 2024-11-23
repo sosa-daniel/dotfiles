@@ -24,6 +24,7 @@ colorscheme catppuccin_macchiato
 
 "" Base Settings
 "" ============================================================================
+set nocompatible      " Disable vi compatibility
 set guicursor=a:block " Set the cursor to block in all modes
 set encoding=utf8     " Avoid encoding headaches
 set laststatus=2      " Enable statusline (lightline Plugin)
