@@ -1,6 +1,7 @@
 "" This VIMRC file does not make use of any plugins
 "" Base Settings
 "" ============================================================================
+colorscheme slate
 set nolist            " Don't show whitespace chars.
 set guicursor=a:block " Set the cursor to block in all modes
 set encoding=utf8     " Avoid encoding headaches
@@ -23,7 +24,7 @@ set softtabstop=4            " Amount of whitespace per tab/backspace
 set shiftwidth=4             " 4 spaces per level of indentation
 set expandtab                " Use spaces instead of tab chars
 set autoindent               " Indent automatically
-set colorcolumn=80           " Marks an 80-character column limit
+"set colorcolumn=80           " Marks an 80-character column limit
 set fileformat=unix          " Avoids conversion issues with Github
 " Use `:H` instead of `:help` for fullscreen help window
 command! -nargs=1 -complete=help H help <args> | silent only
