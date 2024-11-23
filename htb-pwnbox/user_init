@@ -10,3 +10,5 @@ chmod 600 ~/.ssh/*
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ~/.tmux/plugins/tpm/bin/install_plugins
+
+echo -e "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSetup Complete\nLog in using the following command:' \nssh $USER@$HOSTNAME.htb-cloud.com\n'"
