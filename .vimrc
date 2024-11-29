@@ -86,3 +86,9 @@ else           " If in Vim, map to fzf.vim
     nnoremap <leader>fb <cmd>Buffers<cr>
     nnoremap <leader>fh <cmd>Helptags<cr>
 endif
+" Beancount commands (remember l for ledger)
+nnoremap <leader>lc :! bean-check % <CR>
+nnoremap <leader>lf :%! bean-format <CR>
+nnoremap <leader>lt :! bean-report % trial <CR>
+nnoremap <leader>la :! bean-report % accounts <CR>
+nnoremap <leader>le :! bean-report % equity <CR>
