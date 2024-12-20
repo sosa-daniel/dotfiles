@@ -29,7 +29,7 @@ set autoindent               " Indent automatically
 set fileformat=unix          " Avoids conversion issues with Github
 " Use `:H` instead of `:help` for fullscreen help window
 command! -nargs=1 -complete=help H help <args> | silent only
-
+set backspace=indent,eol,start
 "" Key Mapping
 "" ============================================================================
 let mapleader = " "
