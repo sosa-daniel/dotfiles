@@ -9,6 +9,10 @@
         {
             "before": ["<leader>", "r"],
             "commands": ["workbench.action.debug.run"]
+        },
+        {
+            "before": ["<leader>", "d"],
+            "commands": ["workbench.action.debug.start"]
         }
     ],
     "vim.insertModeKeyBindings": [
