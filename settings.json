@@ -1,0 +1,14 @@
+// The following is not the complete vs code settings JSON but only the specific settings that I added or changed from Default.
+// Expects the Vim extension to be installed
+
+{
+    "vim.smartRelativeLine": true,
+    "editor.lineNumbers": "relative",
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["j", "k"],
+        "after": ["<Esc>"]
+      }
+    ],
+    "vim.useSystemClipboard": true
+}
