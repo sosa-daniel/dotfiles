@@ -4,6 +4,13 @@
 {
     "vim.smartRelativeLine": true,
     "editor.lineNumbers": "relative",
+    "vim.leader": "<Space>",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "r"],
+            "commands": ["workbench.action.debug.run"]
+        }
+    ],
     "vim.insertModeKeyBindings": [
       {
         "before": ["j", "k"],
