@@ -1,36 +1,36 @@
-"" Plugins & Colorscheme - Install with Vim-Plug
-"" ============================================================================
-call plug#begin()
-Plug 'davidhalter/jedi-vim'         " Python autocompletion library!
-Plug 'vim-scripts/indentpython.vim' " Better autoindent for PEP 8
-Plug 'sheerun/vim-polyglot'         " Syntax highlighting and auto-indentation
-Plug 'junegunn/vim-easy-align'      " Operators/objects for aligning text
-Plug 'tpope/vim-surround'           " Operators/objects for sorrounding chars
-Plug 'tpope/vim-repeat'             " dependency of surround
-if has('nvim')                      " Plugins depending if on Vim/NeoVim
-    Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
-    Plug 'nvim-lua/plenary.nvim'                              
-    Plug 'neovim/nvim-lspconfig'
-else	
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }      
-    Plug 'junegunn/fzf.vim'                                 
-    Plug 'tpope/vim-commentary'     " Extra operator to comment/uncomment
-endif
-Plug 'itchyny/lightline.vim'        " Statusline
-Plug 'catppuccin/vim', { 'as': 'catppuccin'}
-call plug#end()
-let g:lightline = { 'colorscheme': 'one'}
-colorscheme catppuccin_macchiato 
+""" Plugins & Colorscheme - Install with Vim-Plug
+""" ============================================================================
+"call plug#begin()
+"Plug 'davidhalter/jedi-vim'         " Python autocompletion library!
+"Plug 'vim-scripts/indentpython.vim' " Better autoindent for PEP 8
+"Plug 'sheerun/vim-polyglot'         " Syntax highlighting and auto-indentation
+"Plug 'junegunn/vim-easy-align'      " Operators/objects for aligning text
+"Plug 'tpope/vim-surround'           " Operators/objects for sorrounding chars
+"Plug 'tpope/vim-repeat'             " dependency of surround
+"if has('nvim')                      " Plugins depending if on Vim/NeoVim
+"    Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+"    Plug 'nvim-lua/plenary.nvim'                              
+"    Plug 'neovim/nvim-lspconfig'
+"else	
+"    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }      
+"    Plug 'junegunn/fzf.vim'                                 
+"    Plug 'tpope/vim-commentary'     " Extra operator to comment/uncomment
+"endif
+"Plug 'itchyny/lightline.vim'        " Statusline
+"Plug 'catppuccin/vim', { 'as': 'catppuccin'}
+"call plug#end()
+"let g:lightline = { 'colorscheme': 'one'}
+"colorscheme catppuccin_macchiato 
 
 "" Base Settings
 "" ============================================================================
 set nocompatible      " Disable vi compatibility
 set guicursor=a:block " Set the cursor to block in all modes
 set encoding=utf8     " Avoid encoding headaches
-set laststatus=2      " Enable statusline (lightline Plugin)
-set noshowmode        " Don't show mode (lightline Plugin)
+"set laststatus=2      " Enable statusline (lightline Plugin)
+"set noshowmode        " Don't show mode (lightline Plugin)
 set hidden            " Allows moving through buffers without saving first
-set cursorline        " Highlights the current line in the editor
+"set cursorline        " Highlights the current line in the editor
 set scrolloff=2       " The number of context lines above and below the cursor
 set incsearch         " Highlights the pattern as a search command is typed
 set ignorecase        " Ignore case in search patterns

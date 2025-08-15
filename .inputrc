@@ -3,7 +3,7 @@
 "\C-H": shell-backward-kill-word
 
 #enable vi keybindings where available (like bash)
-set editing-mode vi
+#set editing-mode vi
 
 #set keymap vi-insert
 "jk": "\e"
