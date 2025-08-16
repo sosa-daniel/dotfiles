@@ -1,12 +1,15 @@
 """ Plugins & Colorscheme - Install with Vim-Plug
 """ ============================================================================
-"call plug#begin()
+call plug#begin()
 "Plug 'davidhalter/jedi-vim'         " Python autocompletion library!
 "Plug 'vim-scripts/indentpython.vim' " Better autoindent for PEP 8
-"Plug 'sheerun/vim-polyglot'         " Syntax highlighting and auto-indentation
-"Plug 'junegunn/vim-easy-align'      " Operators/objects for aligning text
-"Plug 'tpope/vim-surround'           " Operators/objects for sorrounding chars
-"Plug 'tpope/vim-repeat'             " dependency of surround
+Plug 'sheerun/vim-polyglot'         " Syntax highlighting and auto-indentation
+Plug 'junegunn/vim-easy-align'      " Operators/objects for aligning text
+Plug 'tpope/vim-surround'           " Operators/objects for sorrounding chars
+Plug 'tpope/vim-repeat'             " dependency of surround
+Plug 'nathangrigg/vim-beancount'    " Syntax highlighting for beancount
+Plug 'garbas/vim-snipmate'          " Snippet Engine
+Plug 'MarcWeber/vim-addon-mw-utils' " SnipMate dependency
 "if has('nvim')                      " Plugins depending if on Vim/NeoVim
 "    Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 "    Plug 'nvim-lua/plenary.nvim'                              
@@ -16,11 +19,11 @@
 "    Plug 'junegunn/fzf.vim'                                 
 "    Plug 'tpope/vim-commentary'     " Extra operator to comment/uncomment
 "endif
-"Plug 'itchyny/lightline.vim'        " Statusline
-"Plug 'catppuccin/vim', { 'as': 'catppuccin'}
-"call plug#end()
-"let g:lightline = { 'colorscheme': 'one'}
-"colorscheme catppuccin_macchiato 
+Plug 'itchyny/lightline.vim'        " Statusline
+Plug 'catppuccin/vim', { 'as': 'catppuccin'}
+call plug#end()
+let g:lightline = { 'colorscheme': 'one'}
+colorscheme catppuccin_macchiato 
 
 "" Base Settings
 "" ============================================================================
@@ -42,6 +45,15 @@ augroup numbertoggle  " Relative numbers in normal/visual modes only
     autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 set clipboard^=unnamed,unnamedplus " Interact with the OS clipboard
+" General Rules
+set tabstop=4
+set shiftwidth=4
+" Beancount rules
+autocmd BufNewFile,BufRead *.beancount
+	\ set tabstop=2 |
+	\ set softtabstop=2 |
+	\ set shiftwidth=2
+" Python rules
 autocmd BufNewFile,BufRead *.py    " PEP 8 indentation (Python)
     \ set tabstop=4                " Tab chars are displaced as 4 spaces
     \ set softtabstop=4            " Amount of whitespace per tab/backspace
@@ -62,6 +74,8 @@ inoremap jk <Esc>
 " Center screen after scrolling up and down
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
+" Folding
+nnoremap <leader>f za
 " Buffer navigation
 nnoremap <leader>b :ls!<CR>:b<space>
 nnoremap <silent> [b :bprevious<CR>
@@ -75,20 +89,20 @@ nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-if has('nvim') " If in NeoVim, map to telescope.nvim
-    nnoremap <leader>ff <cmd>Telescope find_files<cr>
-    nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-    nnoremap <leader>fb <cmd>Telescope buffers<cr>
-    nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-else           " If in Vim, map to fzf.vim
-    nnoremap <leader>ff <cmd>Files<cr>
-    nnoremap <leader>fg <cmd>Rg<cr>
-    nnoremap <leader>fb <cmd>Buffers<cr>
-    nnoremap <leader>fh <cmd>Helptags<cr>
-endif
+" 
+"    nnoremap <leader>ff <cmd>Telescope find_files<cr>
+"    nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+"    nnoremap <leader>fb <cmd>Telescope buffers<cr>
+"    nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+"else           " If in Vim, map to fzf.vim
+"    nnoremap <leader>ff <cmd>Files<cr>
+"    nnoremap <leader>fg <cmd>Rg<cr>
+"    nnoremap <leader>fb <cmd>Buffers<cr>
+"    nnoremap <leader>fh <cmd>Helptags<cr>
+"endif
 " Beancount commands (remember l for ledger)
 nnoremap <leader>lc :! bean-check % <CR>
-nnoremap <leader>lf :%! bean-format <CR>
+nnoremap <leader>lf :%! bean-format - <CR>
 nnoremap <leader>lt :! bean-report % trial <CR>
 nnoremap <leader>la :! bean-report % accounts <CR>
 nnoremap <leader>le :! bean-report % equity <CR>
