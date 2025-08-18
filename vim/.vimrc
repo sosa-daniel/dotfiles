@@ -48,6 +48,7 @@ set clipboard^=unnamed,unnamedplus " Interact with the OS clipboard
 " General Rules
 set tabstop=4
 set shiftwidth=4
+set expandtab
 " Beancount rules
 autocmd BufNewFile,BufRead *.beancount
 	\ set tabstop=2 |
