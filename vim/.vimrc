@@ -1,29 +1,23 @@
 """ Plugins & Colorscheme - Install with Vim-Plug
-""" ============================================================================
+""" ===========================================================================
+if ! empty(globpath(&rtp, 'autoload/plug.vim'))
 call plug#begin()
 "Plug 'davidhalter/jedi-vim'         " Python autocompletion library!
 "Plug 'vim-scripts/indentpython.vim' " Better autoindent for PEP 8
 Plug 'sheerun/vim-polyglot'         " Syntax highlighting and auto-indentation
 Plug 'junegunn/vim-easy-align'      " Operators/objects for aligning text
-Plug 'tpope/vim-surround'           " Operators/objects for sorrounding chars
+Plug 'tpope/vim-commentary'         " Extra operator to comment/uncomment
 Plug 'tpope/vim-repeat'             " dependency of surround
+Plug 'tpope/vim-surround'           " Operators/objects for sorrounding chars
 Plug 'nathangrigg/vim-beancount'    " Syntax highlighting for beancount
 Plug 'garbas/vim-snipmate'          " Snippet Engine
 Plug 'MarcWeber/vim-addon-mw-utils' " SnipMate dependency
-"if has('nvim')                      " Plugins depending if on Vim/NeoVim
-"    Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
-"    Plug 'nvim-lua/plenary.nvim'                              
-"    Plug 'neovim/nvim-lspconfig'
-"else	
-"    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }      
-"    Plug 'junegunn/fzf.vim'                                 
-"    Plug 'tpope/vim-commentary'     " Extra operator to comment/uncomment
-"endif
 Plug 'itchyny/lightline.vim'        " Statusline
 Plug 'catppuccin/vim', { 'as': 'catppuccin'}
 call plug#end()
 let g:lightline = { 'colorscheme': 'one'}
 colorscheme catppuccin_macchiato 
+endif
 
 "" Base Settings
 "" ============================================================================
@@ -90,17 +84,6 @@ nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-" 
-"    nnoremap <leader>ff <cmd>Telescope find_files<cr>
-"    nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-"    nnoremap <leader>fb <cmd>Telescope buffers<cr>
-"    nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-"else           " If in Vim, map to fzf.vim
-"    nnoremap <leader>ff <cmd>Files<cr>
-"    nnoremap <leader>fg <cmd>Rg<cr>
-"    nnoremap <leader>fb <cmd>Buffers<cr>
-"    nnoremap <leader>fh <cmd>Helptags<cr>
-"endif
 " Beancount commands (remember l for ledger)
 nnoremap <leader>lc :! bean-check % <CR>
 nnoremap <leader>lf :%! bean-format - <CR>
