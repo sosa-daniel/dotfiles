@@ -1,4 +1,4 @@
-""" Plugins & Colorscheme - Install with Vim-Plug
+""" Plugins - Install with Vim-Plug
 """ ===========================================================================
 if ! empty(globpath(&rtp, 'autoload/plug.vim'))
 call plug#begin()
@@ -13,10 +13,11 @@ Plug 'nathangrigg/vim-beancount'    " Syntax highlighting for beancount
 Plug 'garbas/vim-snipmate'          " Snippet Engine
 Plug 'MarcWeber/vim-addon-mw-utils' " SnipMate dependency
 Plug 'itchyny/lightline.vim'        " Statusline
-Plug 'catppuccin/vim', { 'as': 'catppuccin'}
+Plug 'dracula/vim', { 'as': 'dracula'} 
 call plug#end()
-let g:lightline = { 'colorscheme': 'one'}
-colorscheme catppuccin_macchiato 
+set termguicolors
+set background=dark
+colorscheme dracula
 endif
 
 "" Base Settings
