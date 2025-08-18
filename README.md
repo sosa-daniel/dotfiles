@@ -1,15 +1,9 @@
 # Purpose
 Various configuration files to keep environments as homogeneous as possible across all devices.
 
-## Load shell configs
+## Load shell configs using GNU stow
 ```
-wget https://raw.githubusercontent.com/sosa-daniel/dotfiles/master/.tmux.conf
-wget https://raw.githubusercontent.com/sosa-daniel/dotfiles/master/.bashrc
-wget https://raw.githubusercontent.com/sosa-daniel/dotfiles/master/.inputrc
-wget https://raw.githubusercontent.com/sosa-daniel/dotfiles/master/.vimrc
-
-bind -f  ~/.inputrc
-source ~/.bashrc
+stow alacritty bash tmux vim vscode
 ```
 
 ## Install TMUX plugin manager
