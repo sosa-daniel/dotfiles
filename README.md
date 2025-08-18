@@ -1,7 +1,7 @@
 # Purpose
 Various configuration files to keep environments as homogeneous as possible across all devices.
 
-## Load shell configs using GNU stow
+## Load configs using GNU stow
 ```
 stow alacritty bash tmux vim vscode
 ```
