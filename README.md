@@ -3,7 +3,7 @@ Various configuration files to keep environments as homogeneous as possible acro
 
 ## Load configs using GNU stow
 ```
-stow alacritty bash tmux vim vscode
+stow .
 ```
 
 ## Install TMUX plugin manager and vim-plug
