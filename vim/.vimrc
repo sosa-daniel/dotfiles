@@ -75,6 +75,7 @@ nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 " Folding
 nnoremap <leader>f za
+set foldmethod=marker
 " Buffer navigation
 nnoremap <leader>b :ls!<CR>:b<space>
 nnoremap <silent> [b :bprevious<CR>
