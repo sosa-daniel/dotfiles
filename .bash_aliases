@@ -1,5 +1,3 @@
-alias update=~/.debian_update.sh
-
 alias gs="git status"
 alias gad="git add ."
 # Stage all modified and deleted tracked files (update)
