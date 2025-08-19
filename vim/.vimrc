@@ -19,6 +19,8 @@ call plug#end()
 set termguicolors
 set background=dark
 colorscheme dracula
+let g:highlightedyank_highlight_duration = 60
+
 endif
 
 "" Base Settings
