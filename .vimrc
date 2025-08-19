@@ -43,25 +43,17 @@ augroup numbertoggle  " Relative numbers in normal/visual modes only
     autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 set clipboard^=unnamed,unnamedplus " Interact with the OS clipboard
-" General Rules
-set tabstop=4
-set shiftwidth=4
-set expandtab
+" Coding rules (uses PEP 8 Python indentation)
+set tabstop=4                " Tab chars are displaced as 4 spaces
+set softtabstop=4            " Amount of whitespace per tab/backspace
+set shiftwidth=4             " 4 spaces per level of indentation
+set expandtab                " Use spaces instead of tab chars
+set autoindent               " Indent automatically
+set colorcolumn=80           " Marks an 80-character column limit
+set fileformat=unix          " Avoids conversion issues with Github
 " Beancount rules
-autocmd BufNewFile,BufRead *.beancount
-	\ set tabstop=2 |
-	\ set softtabstop=2 |
-	\ set shiftwidth=2
-" Python rules
-autocmd BufNewFile,BufRead *.py    " PEP 8 indentation (Python)
-    \ set tabstop=4                " Tab chars are displaced as 4 spaces
-    \ set softtabstop=4            " Amount of whitespace per tab/backspace
-    \ set shiftwidth=4             " 4 spaces per level of indentation
-    \ set expandtab                " Use spaces instead of tab chars
-    \ set autoindent               " Indent automatically
-    \ set colorcolumn=80           " Marks an 80-character column limit
-    \ set fileformat=unix          " Avoids conversion issues with Github
-    \ match BadWhitespace /\s\+$/  " Mark extra whitespace as bad
+autocmd BufNewFile,BufRead *.beancount set ts=2 sts=2 sw=2
+autocmd BufNewFile,BufRead *.snippets set nofoldenable
 " Use `:H` instead of `:help` for fullscreen help window
 command! -nargs=1 -complete=help H help <args> | silent only 
 
