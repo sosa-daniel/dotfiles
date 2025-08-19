@@ -13,6 +13,7 @@ Plug 'nathangrigg/vim-beancount'    " Syntax highlighting for beancount
 Plug 'garbas/vim-snipmate'          " Snippet Engine
 Plug 'MarcWeber/vim-addon-mw-utils' " SnipMate dependency
 Plug 'itchyny/lightline.vim'        " Statusline
+Plug 'machakann/vim-highlightedyank'
 Plug 'dracula/vim', { 'as': 'dracula'} 
 call plug#end()
 set termguicolors
