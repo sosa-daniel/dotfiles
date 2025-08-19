@@ -1,0 +1,13 @@
+# Ignore git files
+\.git
+\.gitignore
+\.gitmodules
+
+# Ignore README and LICENSE
+^/README.*
+^/LICENSE.*
+^/COPYING
+
+# Ignore other stuff
+htb-pwnbox.*
+.*\.(ps1)
