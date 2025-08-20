@@ -55,7 +55,7 @@ nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-" Beancount Rulesrememver L for ledger)
+" Beancount Rules - Mnemonic: L for ledger
 nnoremap <leader>lc :! bean-check % <CR>
 nnoremap <leader>lf :%! bean-format - <CR>
 nnoremap <leader>lt :! bean-report % trial <CR>
