@@ -1,37 +1,10 @@
-""" Plugins - Install with Vim-Plug
-""" ===========================================================================
-if ! empty(globpath(&rtp, 'autoload/plug.vim'))
-call plug#begin()
-"Plug 'davidhalter/jedi-vim'         " Python autocompletion library!
-"Plug 'vim-scripts/indentpython.vim' " Better autoindent for PEP 8
-Plug 'sheerun/vim-polyglot'         " Syntax highlighting and auto-indentation
-Plug 'junegunn/vim-easy-align'      " Operators/objects for aligning text
-Plug 'tpope/vim-commentary'         " Extra operator to comment/uncomment
-Plug 'tpope/vim-repeat'             " dependency of surround
-Plug 'tpope/vim-surround'           " Operators/objects for sorrounding chars
-Plug 'nathangrigg/vim-beancount'    " Syntax highlighting for beancount
-Plug 'garbas/vim-snipmate'          " Snippet Engine
-Plug 'MarcWeber/vim-addon-mw-utils' " SnipMate dependency
-Plug 'itchyny/lightline.vim'        " Statusline
-Plug 'machakann/vim-highlightedyank'
-Plug 'dracula/vim', { 'as': 'dracula'} 
-call plug#end()
-set termguicolors
-set background=dark
-colorscheme dracula
-let g:highlightedyank_highlight_duration = 60
-
-endif
-
 "" Base Settings
 "" ============================================================================
+colorscheme slate     " Gets overwritten if plugins are enabled
 set nocompatible      " Disable vi compatibility
 set guicursor=a:block " Set the cursor to block in all modes
 set encoding=utf8     " Avoid encoding headaches
-"set laststatus=2      " Enable statusline (lightline Plugin)
-"set noshowmode        " Don't show mode (lightline Plugin)
 set hidden            " Allows moving through buffers without saving first
-"set cursorline        " Highlights the current line in the editor
 set scrolloff=2       " The number of context lines above and below the cursor
 set incsearch         " Highlights the pattern as a search command is typed
 set ignorecase        " Ignore case in search patterns
@@ -51,9 +24,10 @@ set expandtab                " Use spaces instead of tab chars
 set autoindent               " Indent automatically
 set colorcolumn=80           " Marks an 80-character column limit
 set fileformat=unix          " Avoids conversion issues with Github
-" Beancount rules
-autocmd BufNewFile,BufRead *.beancount set ts=2 sts=2 sw=2
+" Disable folding for .snippets files
 autocmd BufNewFile,BufRead *.snippets set nofoldenable
+" Beancount rules
+autocmd BufNewFile,BufRead *.beancount set ts=2 sts=2 sw=2 
 " Use `:H` instead of `:help` for fullscreen help window
 command! -nargs=1 -complete=help H help <args> | silent only 
 
@@ -81,9 +55,38 @@ nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-" Beancount commands (remember l for ledger)
+" Beancount Rulesrememver L for ledger)
 nnoremap <leader>lc :! bean-check % <CR>
 nnoremap <leader>lf :%! bean-format - <CR>
 nnoremap <leader>lt :! bean-report % trial <CR>
 nnoremap <leader>la :! bean-report % accounts <CR>
 nnoremap <leader>le :! bean-report % equity <CR>
+
+""" Plugins - Install with Vim-Plug
+""" ===========================================================================
+if ! empty(globpath(&rtp, 'autoload/plug.vim'))
+call plug#begin()
+"Plug 'davidhalter/jedi-vim'         " Python autocompletion library!
+"Plug 'vim-scripts/indentpython.vim' " Better autoindent for PEP 8
+Plug 'sheerun/vim-polyglot'         " Syntax highlighting and auto-indentation
+Plug 'junegunn/vim-easy-align'      " Operators/objects for aligning text
+Plug 'tpope/vim-commentary'         " Extra operator to comment/uncomment
+Plug 'tpope/vim-repeat'             " dependency of surround
+Plug 'tpope/vim-surround'           " Operators/objects for sorrounding chars
+Plug 'nathangrigg/vim-beancount'    " Syntax highlighting for beancount
+Plug 'garbas/vim-snipmate'          " Snippet Engine
+Plug 'MarcWeber/vim-addon-mw-utils' " SnipMate dependency
+Plug 'itchyny/lightline.vim'        " Statusline
+Plug 'machakann/vim-highlightedyank'
+Plug 'dracula/vim', { 'as': 'dracula'} 
+call plug#end()
+let g:lightline = { 'colorscheme': 'dracula'}
+colorscheme dracula
+set laststatus=2
+set termguicolors
+set background=dark
+set noshowmode
+let g:highlightedyank_highlight_duration = 60
+
+endif
+

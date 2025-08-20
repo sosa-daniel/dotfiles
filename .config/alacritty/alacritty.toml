@@ -1,7 +1,10 @@
 [font]
-size = 18.0
+size = 16.5
 
 [window]
+padding = { x = 10, y = 10}
+dynamic_padding = true
+decorations  = "None"
 startup_mode = "Maximized"
 
 [env]
