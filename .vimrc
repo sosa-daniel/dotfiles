@@ -58,9 +58,6 @@ nmap ga <Plug>(EasyAlign)
 " Beancount Rules - Mnemonic: L for ledger
 nnoremap <leader>lc :! bean-check % <CR>
 nnoremap <leader>lf :%! bean-format - <CR>
-nnoremap <leader>lt :! bean-report % trial <CR>
-nnoremap <leader>la :! bean-report % accounts <CR>
-nnoremap <leader>le :! bean-report % equity <CR>
 
 """ Plugins - Install with Vim-Plug
 """ ===========================================================================
