@@ -1,7 +1,19 @@
 #!/bin/bash
+REQUIRED_TOOLS="git curl wget unzip fc-cache stow tmux vim"
 PREV_PWD=$(pwd)
 DDIR="$HOME/Downloads"
 FDIR="$HOME/.fonts"
+
+# Check if tools are installed
+for tool in $REQUIRED_TOOLS
+do
+	if ! command -v $tool >/dev/null 2>&1
+	then
+		echo "I require $tool but it's not installed. Aborting."
+		exit 1
+	fi
+done
+
 
 # TMUX: install Plugin manager
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
