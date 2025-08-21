@@ -2,6 +2,10 @@
 Various configuration files to keep environments as homogeneous as possible across all devices.
 
 ## Installation
+Clone with git:
+
+`git clone https://github.com/sosa-daniel/dotfiles ~/dotfiles`
+
 Load configs using GNU stow:
 
 ` stow . `
