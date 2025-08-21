@@ -19,7 +19,6 @@ done
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 	echo "Downloading TMUX Plugin Manager (TPM)"
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-	~/.tmux/plugins/tpm/bin/install_plugins
 else
 	echo "tpm is already installed."
 fi
@@ -30,7 +29,7 @@ if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 else
-	echo "vim-plug is already installed.."
+	echo "vim-plug is already installed."
 fi
 
 if [ ! -d "$DOWNLOADS" ]; then
@@ -58,7 +57,11 @@ fi
 # return to the previous working directory
 cd $PREV_PWD
 
-echo -e "\n\nTools installed and files in place. Load configs using GNU stow:"
+echo -e "\nTools installed and files in place. Load configs using GNU stow:"
 echo "\`cd $DOTFILES_DIR\`"
 echo "\`stow .\`"
+echo -e "\nInstall vim plugins:"
+echo "\`vim +PlugInstall\`"
+echo -e "\nInstall tmux plugins:"
+echo "\`$DOTFILES_DIR/.tmux/plugins/tpm/bin/install_plugins\`"
 exit
