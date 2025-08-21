@@ -1,8 +1,9 @@
 #!/bin/bash
 REQUIRED_TOOLS="git curl wget unzip fc-cache stow tmux vim"
 PREV_PWD=$(pwd)
-DDIR="$HOME/Downloads"
-FDIR="$HOME/.fonts"
+DOWNLOADS="$HOME/Downloads"
+FONT_DIR="$HOME/.fonts"
+DOTFILES_DIR="$HOME/dotfiles"
 
 # Check if tools are installed
 for tool in $REQUIRED_TOOLS
@@ -13,7 +14,6 @@ do
 		exit 1
 	fi
 done
-
 
 # TMUX: install Plugin manager
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
@@ -33,23 +33,23 @@ else
 	echo "vim-plug is already installed.."
 fi
 
-if [ ! -d "$DDIR" ]; then
+if [ ! -d "$DOWNLOADS" ]; then
 	echo "Creating Downloads directory in $HOME"
-	mkdir $DDIR
+	mkdir $DOWNLOADS
 fi
 
 # Fonts: Download and Install fonts
-if [ ! -d "$FDIR" ]; then
+if [ ! -d "$FONT_DIR" ]; then
 	echo "Creating .fonts directory in $HOME"
-	mkdir $FDIR
+	mkdir $FONT_DIR
 fi
 
-if [ ! -f "$FDIR/CaskaydiaCoveNerdFontMono-Regular.ttf" ]; then
+if [ ! -f "$FONT_DIR/CaskaydiaCoveNerdFontMono-Regular.ttf" ]; then
 	echo "Downloading CaskaydiaCove Nerd Font"
-	cd $DDIR
+	cd $DOWNLOADS
 	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaCode.zip
 	unzip CascadiaCode.zip
-	mv *.ttf $FDIR
+	mv *.ttf $FONT_DIR
 	fc-cache -fv
 else
 	echo "CaskaydiaCove font is already installed."
@@ -57,4 +57,8 @@ fi
 
 # return to the previous working directory
 cd $PREV_PWD
+
+echo -e "\n\nTools installed and files in place. Load configs using GNU stow:"
+echo "\`cd $DOTFILES_DIR\`"
+echo "\`stow .\`"
 exit
