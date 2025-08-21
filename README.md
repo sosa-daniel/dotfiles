@@ -8,4 +8,4 @@ Load configs using GNU stow
 
 Install TMUX plugin manager, vim-plug, and a Nerd Font
 
-`./ get_tools.sh `
+`./get_tools.sh `
