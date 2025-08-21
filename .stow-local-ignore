@@ -10,4 +10,4 @@
 
 # Ignore other stuff
 htb-pwnbox.*
-.*\.(ps1)
+.*\.(ps1|sh)
