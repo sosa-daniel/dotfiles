@@ -1,6 +1,6 @@
 {
-    "vim.smartRelativeLine": true,
-    "editor.lineNumbers": "relative",
+    "workbench.colorTheme": "Default Dark+",
+    "vim.useSystemClipboard": true,
     "vim.leader": "<Space>",
     "vim.normalModeKeyBindingsNonRecursive": [
         {
@@ -18,7 +18,21 @@
         "after": ["<Esc>"]
       }
     ],
-    "vim.useSystemClipboard": true
+    "vim.smartRelativeLine": true,
+	"[python]":  {
+		"editor.defaultFormatter": "ms-python.black-formatter",
+		"editor.formatOnSave": true,
+		"diffEditor.ignoreTrimWhitespace": false,
+		"editor.defaultColorDecorators": "never",
+		"editor.wordBasedSuggestions": "off",
+		"editor.codeActionsOnSave": {
+			"source.fixAll": "explicit",
+			"source.organizeImports": "explicit"
+		},
+		"editor.rulers": [88],
+	},
+	"black-formatter.importStrategy": "fromEnvironment",
+	"black-formatter.interpreter": ["python"]
 }
 
 
