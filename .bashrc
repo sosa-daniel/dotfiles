@@ -2,6 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export VISUAL='/usr/bin/vim'
 export EDITOR='/usr/bin/vi'
 
 # If not running interactively, don't do anything
