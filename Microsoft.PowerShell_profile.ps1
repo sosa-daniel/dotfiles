@@ -1,4 +1,4 @@
-## Changes last set 2024-11-12
+## Changes last set 2025-09-11
 ## Edit with `vi $profile`
 
 ##############################################################################
@@ -138,13 +138,13 @@ Set-Alias -Name vim -Value vi
 ##############################################################################
 # Disable the audible Bell
 Set-PSReadLineOption -BellStyle None
-# Use powershell vi mode
-Set-PSReadLineOption -EditMode Vi
+# Use powershell emacs mode to allow command line editing (C-a,C-e,etc.)
+Set-PSReadLineOption -EditMode Emacs
 # Change auto-completion to emulate a bash-like behaviour where it only does partial completion instead of rotating around all options.
 Set-PSReadLineKeyHandler -Chord Tab -Function Complete
 # Enable incremental search in Powershell, so you can quickly locate the previous command with Ctrl-r
-Set-PSReadLineKeyHandler -Chord Ctrl-r -Function ReverseSearchHistory -ViMode Insert
-Set-PSReadLineKeyHandler -Chord Ctrl-r -Function ReverseSearchHistory -ViMode Command
+#Set-PSReadLineKeyHandler -Chord Ctrl-r -Function ReverseSearchHistory -ViMode Insert
+#Set-PSReadLineKeyHandler -Chord Ctrl-r -Function ReverseSearchHistory -ViMode Command
 # Delete back one word with <C-W>. This config is necessary after mapping <C-BS> to <C-W> in the
 # Windows Terminal settings.json file as follows:
 # {
@@ -155,24 +155,24 @@ Set-PSReadLineKeyHandler -Chord Ctrl-r -Function ReverseSearchHistory -ViMode Co
 #     "input": "\u0017"
 #   }
 # }
-Set-PSReadLineKeyHandler -Chord Ctrl-w -Function BackwardDeleteWord
+#Set-PSReadLineKeyHandler -Chord Ctrl-w -Function BackwardDeleteWord
 # Replace the input with the previous item in the history (same as UpArrow)
-Set-PSReadLineKeyHandler -Chord Ctrl-p -Function PreviousHistory
+#Set-PSReadLineKeyHandler -Chord Ctrl-p -Function PreviousHistory
 # Map 'jk' to <Esc>
-$j_timer = New-Object System.Diagnostics.Stopwatch
-Set-PSReadLineKeyHandler -Key j -ViMode Insert -ScriptBlock {
-    [Microsoft.PowerShell.PSConsoleReadLine]::Insert("j")
-    $j_timer.Restart()
-}
-Set-PSReadLineKeyHandler -Key k -ViMode Insert -ScriptBlock {
-    if (!$j_timer.IsRunning -or $j_timer.ElapsedMilliseconds -gt 1000) {
-        [Microsoft.PowerShell.PSConsoleReadLine]::Insert("k")
-    } else {
-        [Microsoft.PowerShell.PSConsoleReadLine]::ViCommandMode()
-        $line = $null
-        $cursor = $null
-        [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
-        [Microsoft.PowerShell.PSConsoleReadLine]::Delete($cursor, 1)
-        [Microsoft.PowerShell.PSConsoleReadLine]::SetCursorPosition($cursor-1)
-    }
-}
+#$j_timer = New-Object System.Diagnostics.Stopwatch
+#Set-PSReadLineKeyHandler -Key j -ViMode Insert -ScriptBlock {
+#    [Microsoft.PowerShell.PSConsoleReadLine]::Insert("j")
+#    $j_timer.Restart()
+#}
+#Set-PSReadLineKeyHandler -Key k -ViMode Insert -ScriptBlock {
+#    if (!$j_timer.IsRunning -or $j_timer.ElapsedMilliseconds -gt 1000) {
+#        [Microsoft.PowerShell.PSConsoleReadLine]::Insert("k")
+#    } else {
+#        [Microsoft.PowerShell.PSConsoleReadLine]::ViCommandMode()
+#        $line = $null
+#        $cursor = $null
+#        [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
+#        [Microsoft.PowerShell.PSConsoleReadLine]::Delete($cursor, 1)
+#        [Microsoft.PowerShell.PSConsoleReadLine]::SetCursorPosition($cursor-1)
+#    }
+#}
