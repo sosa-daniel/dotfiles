@@ -140,6 +140,8 @@ Set-Alias -Name vim -Value vi
 Set-PSReadLineOption -BellStyle None
 # Use powershell emacs mode to allow command line editing (C-a,C-e,etc.)
 Set-PSReadLineOption -EditMode Emacs
+# Use prediction in ListView mode instead of default InlineView
+Set-PSReadLineOption -PredictionViewStyle ListView
 # Change auto-completion to emulate a bash-like behaviour where it only does partial completion instead of rotating around all options.
 Set-PSReadLineKeyHandler -Chord Tab -Function Complete
 # Enable incremental search in Powershell, so you can quickly locate the previous command with Ctrl-r
