@@ -5,10 +5,11 @@
 export VISUAL='/usr/bin/vim'
 export EDITOR='/usr/bin/vi'
 
-# The following line sets an inactivity timeout. Definitely use with
-# /root/.bashrc if the root account is enabled
+# The following lines set an inactivity timeout. Definitely use with
+# /root/.bashrc if the root account is enabled (use su -c 'command') for single 
+# commands instead of a root session when appropriate.
 #TMOUT=300
-#read-only TMOUT
+#readonly TMOUT
 #export TMOUT
 
 # If not running interactively, don't do anything
