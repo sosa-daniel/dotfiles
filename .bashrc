@@ -5,6 +5,12 @@
 export VISUAL='/usr/bin/vim'
 export EDITOR='/usr/bin/vi'
 
+# The following line sets an inactivity timeout. Definitely use with
+# /root/.bashrc if the root account is enabled
+#TMOUT=300
+#read-only TMOUT
+#export TMOUT
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
