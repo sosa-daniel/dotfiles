@@ -6,8 +6,8 @@ export VISUAL='/usr/bin/vim'
 export EDITOR='/usr/bin/vi'
 
 # The following lines set an inactivity timeout. Definitely use with
-# /root/.bashrc if the root account is enabled (use su -c 'command') for single 
-# commands instead of a root session when appropriate.
+# /root/.bashrc if the root account is enabled. Use: `su -c 'command'` for
+# single commands instead of a root session when appropriate.
 #TMOUT=300
 #readonly TMOUT
 #export TMOUT
