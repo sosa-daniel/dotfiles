@@ -1,6 +1,7 @@
 {
     "workbench.colorTheme": "Default Dark+",
     "vim.useSystemClipboard": true,
+    "vim.surround": true,
     "vim.leader": "<Space>",
     "vim.normalModeKeyBindingsNonRecursive": [
         {
