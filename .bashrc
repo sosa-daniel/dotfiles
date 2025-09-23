@@ -5,7 +5,8 @@
 export VISUAL='/usr/bin/vim'
 export EDITOR='/usr/bin/vi'
 
-# Disable XON/XOFF flow control
+# Disable XON/XOFF flow control. This allows readline's forward-search-history
+# (C-s) command to function properly in conjunction with C-r
 stty -ixon
 
 # The following lines set an inactivity timeout. Definitely use with
