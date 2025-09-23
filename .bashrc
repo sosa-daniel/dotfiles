@@ -5,6 +5,9 @@
 export VISUAL='/usr/bin/vim'
 export EDITOR='/usr/bin/vi'
 
+# Disable XON/XOFF flow control
+stty -ixon
+
 # The following lines set an inactivity timeout. Definitely use with
 # /root/.bashrc if the root account is enabled. Use: `su -c 'command'` for
 # single commands instead of a root session when appropriate.
