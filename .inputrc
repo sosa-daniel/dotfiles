@@ -1,6 +1,7 @@
-## Changes last set 2024-11-04
+## Changes last set 2025-12-02
 # Ctrl-Backspace: delete previous word
 "\C-H": shell-backward-kill-word
+"\C-\b": backward-kill-word
 
 #enable vi keybindings where available (like bash)
 #set editing-mode vi
