@@ -1,5 +1,7 @@
 "" Base Settings
 "" ============================================================================
+filetype plugin indent on
+syntax on
 colorscheme slate     " Gets overwritten if plugins are enabled
 set nocompatible      " Disable vi compatibility
 set guicursor=a:block " Set the cursor to block in all modes
