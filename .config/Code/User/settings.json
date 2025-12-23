@@ -1,32 +1,32 @@
 {
-    "workbench.colorTheme": "Default Dark+",
-    "vim.useSystemClipboard": true,
-    "vim.surround": true,
-    "vim.leader": "<Space>",
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": ["<leader>", "r"],
-            "commands": ["workbench.action.debug.run"]
-        },
-        {
-            "before": ["<leader>", "d"],
-            "commands": ["workbench.action.debug.start"]
-        }
-    ],
-    "vim.insertModeKeyBindings": [
-      {
-        "before": ["j", "k"],
-        "after": ["<Esc>"]
-      }
-    ],
-    "vim.smartRelativeLine": true,
-	"[python]":  {
-		"editor.defaultFormatter": "ms-python.black-formatter",
-		"editor.formatOnSave": true,
+  "workbench.colorTheme": "Default Dark+",
+  "chat.disableAIFeatures": true,
+  "vim.useSystemClipboard": true,
+  "vim.leader": "<Space>",
+  "vim.normalModeKeyBindingsNonRecursive": [ {
+      "before": [ "<leader>", "r" ],
+      "commands": [ "workbench.action.debug.run" ]
     },
-	"editor.rulers": [88],
-	"black-formatter.importStrategy": "fromEnvironment",
-	"black-formatter.interpreter": ["python"]
+    {
+      "before": [ "<leader>", "d" ],
+      "commands": [ "workbench.action.debug.start" ]
+    }
+  ],
+  "vim.insertModeKeyBindings": [ {
+      "before": [ "j", "k" ],
+      "after": [ "<Esc>" ]
+    }
+  ],
+  "vim.smartRelativeLine": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+  },
+  "editor.rulers": [ 88 ],
+  "editor.fontFamily": "CaskaydiaCove Nerd Font Mono, Consolas, monospace",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": false,
+  "black-formatter.importStrategy": "fromEnvironment",
+  "black-formatter.interpreter": [ "python" ],
+  "python.analysis.typeCheckingMode": "standard",
 }
-
-
